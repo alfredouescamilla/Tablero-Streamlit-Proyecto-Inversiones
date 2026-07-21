@@ -1,9 +1,7 @@
-pip install streamlit yfinance pandas plotly
 import streamlit as st
 import yfinance as yf
 import pandas as pd
 import plotly.express as px
-
 st.set_page_config(page_title="Análisis Fundamental - Acciones EUA", layout="wide")
 
 st.title("📊 Dashboard de Análisis Fundamental — Mercado EUA")
@@ -132,4 +130,3 @@ with tab3:
         st.info("No hay datos de balance general disponibles.")
 
 st.caption("⚠️ Esta información es solo con fines educativos/informativos y no constituye asesoría financiera.")
-streamlit run app.py
