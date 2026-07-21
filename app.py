@@ -117,13 +117,13 @@ tickers_filtrados = list(df.index)
 
 # ---------- Resumen general (KPIs) ----------
 st.subheader("Resumen de la selección")
-k1, k2, k3, k4 = st.columns(4)
+k1, k2, k3, k4 = st.columns([1, 1.6, 1, 1.3])
 k1.metric("Acciones mostradas", len(df))
-k2.metric("Market Cap total", f"${df['Market Cap (B)'].sum():,.2f}B")
+k2.metric("Market Cap total", f"${df['Market Cap (B)'].sum():,.1f}B")
 per_prom = df["PER (trailing)"].dropna()
 k3.metric("PER (trailing) promedio", f"{per_prom.mean():.2f}" if not per_prom.empty else "N/A")
 div_prom = df["Dividend Yield"].dropna()
-k4.metric("Dividend Yield promedio", f"{div_prom.mean():.4f}" if not div_prom.empty else "N/A")
+k4.metric("Dividend Yield promedio", f"{div_prom.mean():.2f}%" if not div_prom.empty else "N/A")
 
 st.divider()
 
